@@ -20,9 +20,8 @@ if (isset($_POST['registration'])) {
     die();
 }
 
-if (isset($_GET['user_id'])) {
+if (!empty($_GET['user_id'])) {
     $where = ' user_id = ' . $_GET['user_id'];
-
 }
 
 $query = 'SELECT * FROM messages' . (isset($where) ? ' WHERE ' . $where : '') . ' ORDER BY created_at DESC;';
@@ -76,6 +75,15 @@ $users = $pdo->query('SELECT * FROM users ORDER BY username;')->fetchAll();
     </table>
 </form>
 <h2>Messages</h2>
+<form method="get">
+    <select name="user_id">
+        <option value="">Filter for a user</option>
+        <?php foreach ($users as $user): ?>
+            <option value="<?php echo $user['id']; ?>"><?php echo $user['username']; ?></option>
+        <?php endforeach; ?>
+    </select>
+    <input type="submit" value="Filter"/>
+</form>
 <?php foreach ($messages as $message): ?>
     <p>
         Created at: <?php echo $message['created_at']; ?><br/>
