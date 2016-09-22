@@ -14,7 +14,7 @@ if (isset($_GET['inject_me'])) {
 <body>
 <h1>Non-persistent XSS</h1>
 <ul>
-    <li><a href="/?inject_me=%22%3E%3Cscript%3Ealert();%3C/script%3E%3C/p%3E%3Cp%20class=%22">Example 1</a></li>
+    <li><a href="<?php echo $_SERVER['REQUEST_URI'] ?>?inject_me=%22%3E%3Cscript%3Ealert();%3C/script%3E%3C/p%3E%3Cp%20class=%22">Example 1</a></li>
 </ul>
 <h2>Without escape</h2>
 <p><?php echo $userContent; ?></p>
