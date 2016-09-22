@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Web Application Security</title>
+</head>
+<body>
+<ul>
+    <li><a href="xss/non_persistent_xss.php" target="_blank">Non-persistent XSS</a></li>
+    <li><a href="xss/persistent_xss.php" target="_blank">Persistent XSS</a></li>
+    <li><a href="csrf/csrf.php" target="_blank">Cross-site request forgery page</a></li>
+    <li><a href="csrf/malicious.html" target="_blank">Cross-site request forgery malicious website</a></li>
+    <li><a href="csrf/malicious_automatic.html" target="_blank">Cross-site request forgery malicious website (auto submit)</a></li>
+    <li><a href="xxe/xxe.php" target="_blank">XML External Entity Processing</a></li>
+    <li><a href="lfi/lfi.php?file=foo" target="_blank">Local File Inclusion</a></li>
+    <li><a href="lfi/lfi2.php?file=php://filter/convert.base64-encode/resource=lfi2.php" target="_blank">Local File Inclusion 2</a></li>
+    <li><a href="sql_injection/sql_injection.php" target="_blank">SQL Injection</a></li>
+    <li><a href="sql_injection/sql_injection.php?user_id=1%20AND%20SUBSTR%28%28SELECT%20COALESCE%28username%2C%27%20%27%29%20FROM%20users%20LIMIT%200%2C1%29%2C1%2C1%29%3E%27A%27" target="_blank">SQL Injection (blind)</a></li>
+    <li><a href="http_header_injection/hhi.php" target="_blank">HTTP Header Injection</a></li>
+    <li><a href="session/fixation.php" target="_blank">Session fixation</a></li>
+</ul>
+</body>
+</html>

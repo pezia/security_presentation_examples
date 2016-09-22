@@ -1,0 +1,13 @@
+{
+    "name": "marble-digital/http-header-injection",
+    "type": "project",
+    "require": {
+        "symfony/http-foundation": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Zsolt Petrik",
+            "email": "petrik.zsolt@marbledigital.eu"
+        }
+    ]
+}

